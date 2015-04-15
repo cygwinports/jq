@@ -1,0 +1,24 @@
+NAME="jq"
+VERSION=1.4
+RELEASE=1
+CATEGORY="Text"
+SUMMARY="Lightweight and flexible JSON processor"
+DESCRIPTION="jq is like sed for JSON data – you can use it to slice and filter
+and map and transform structured data with the same ease that sed, awk, grep
+and friends let you play with text."
+HOMEPAGE="https://stedolan.github.io/jq/"
+SRC_URI="${HOMEPAGE}/download/source/jq-${VERSION}.tar.gz"
+PATCH_URI="1.4-no-undefined.patch"
+
+PKG_NAMES="jq libjq1 libjq-devel"
+jq_CONTENTS="usr/bin/jq.exe usr/share/doc/ usr/share/man/"
+libjq1_CATEGORY="Libs"
+libjq1_CONTENTS="usr/bin/cygjq-1.dll"
+libjq_devel_CATEGORY="Libs"
+libjq_devel_CONTENTS="usr/include/ usr/lib/libjq.dll.a"
+
+src_test() {
+	cd ${B}
+	# did something change in libtool-2.4.5+?
+	PATH=${B}/.libs:$PATH cygmake check
+}

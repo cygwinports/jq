@@ -1,0 +1,11 @@
+--- origsrc/jq-1.4/Makefile.am	2014-06-09 18:57:01.000000000 -0500
++++ src/jq-1.4/Makefile.am	2015-04-14 16:56:51.279481100 -0500
+@@ -35,7 +35,7 @@ AM_YFLAGS = --warnings=all -d
+ lib_LTLIBRARIES = libjq.la
+ libjq_la_SOURCES = ${LIBJQ_SRC}
+ libjq_la_LIBADD = -lm
+-libjq_la_LDFLAGS = -export-symbols-regex '^j[qv]_' -version-info 1:4:0
++libjq_la_LDFLAGS = -export-symbols-regex '^j[qv]_' -version-info 1:4:0 -no-undefined
+ 
+ include_HEADERS = jv.h jq.h
+ 
