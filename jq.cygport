@@ -1,5 +1,5 @@
 NAME="jq"
-VERSION=1.4
+VERSION=1.5
 RELEASE=1
 CATEGORY="Text"
 SUMMARY="Lightweight and flexible JSON processor"
@@ -7,7 +7,7 @@ DESCRIPTION="jq is like sed for JSON data – you can use it to slice and filter
 and map and transform structured data with the same ease that sed, awk, grep
 and friends let you play with text."
 HOMEPAGE="https://stedolan.github.io/jq/"
-SRC_URI="${HOMEPAGE}/download/source/jq-${VERSION}.tar.gz"
+SRC_URI="https://github.com/stedolan/jq/releases/download/jq-${VERSION}/jq-${VERSION}.tar.gz"
 PATCH_URI="1.4-no-undefined.patch"
 
 PKG_NAMES="jq libjq1 libjq-devel"
